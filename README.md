@@ -1,5 +1,7 @@
 # llm-grounding-kit
 
+[![tests](https://github.com/EyupAtasoy/llm-grounding-kit/actions/workflows/tests.yml/badge.svg)](https://github.com/EyupAtasoy/llm-grounding-kit/actions/workflows/tests.yml)
+
 A small library for one narrow job: take a free-text value that an LLM (or a
 regex, or a human) pulled out of a document, and map it onto a fixed list of
 canonical values. If it cannot do that with enough confidence, it says
