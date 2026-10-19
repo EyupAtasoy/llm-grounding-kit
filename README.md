@@ -94,7 +94,7 @@ between building it and using it.
 python -m venv .venv
 .venv/Scripts/activate            # Windows; use .venv/bin/activate elsewhere
 pip install -e ".[dev]"           # core + pytest
-pip install -e ".[embeddings]"    # optional: sentence-transformers (pulls in torch)
+pip install -e ".[embeddings]"    # optional: numpy + sentence-transformers (pulls in torch)
 
 pytest
 python examples/quickstart.py
@@ -184,8 +184,12 @@ labelled sample of your own traffic, run the sweep on that and choose.
   a few thousand entries. Beyond that you would want an n-gram index or
   `rapidfuzz.process.cdist` in batches.
 - Scores from different layers are not comparable (edit ratio vs cosine), so
-  the result keeps every layer's rejected candidate instead of picking a
-  single "best" suggestion.
+  `Match.rejected` keeps every layer's rejected candidate, and
+  `Match.suggestion` is simply the cheapest layer's guess. That is not always
+  the best one: for "maize" the fuzzy layer suggests Timber.
+- Normalisation folds to ASCII. Common Latin letters (ø, ß, ł, ...) are
+  handled, but non-Latin scripts fold to an empty string and come back
+  Unknown.
 - Filler stripping is literal and per reference. "Port of Spain" would be
   normalised to "spain" if "port of" is a filler. Keep fillers conservative.
 - The embedding layer encodes the whole reference when it is built. With a

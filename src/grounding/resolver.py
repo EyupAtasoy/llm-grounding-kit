@@ -28,6 +28,7 @@ class Match:
 
     @property
     def suggestion(self) -> str | None:
+        """Guess from the cheapest layer that proposed anything (see `rejected` for all)."""
         return self.rejected[0].key if self.rejected else None
 
 

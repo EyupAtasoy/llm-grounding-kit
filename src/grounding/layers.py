@@ -25,7 +25,8 @@ class Candidate:
 
 
 class Layer(Protocol):
-    name: str
+    @property
+    def name(self) -> str: ...
 
     def propose(self, query: str) -> Candidate | None: ...
 

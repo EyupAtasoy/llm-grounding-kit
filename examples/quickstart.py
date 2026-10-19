@@ -3,9 +3,12 @@
     python examples/quickstart.py
 """
 
+import sys
 from pathlib import Path
 
 from grounding import Reference, Resolver
+
+sys.stdout.reconfigure(encoding="utf-8")  # "Constanța" breaks the default Windows console codepage
 
 ports = Reference.from_json(Path(__file__).resolve().parent.parent / "data" / "ports.json")
 resolver = Resolver.build(ports)  # alias + fuzzy; pass encode=... to add embeddings

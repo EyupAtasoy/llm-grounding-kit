@@ -11,12 +11,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from collections import Counter
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 
 from grounding import AliasLayer, EmbeddingLayer, FuzzyLayer, Match, Reference, Resolver
+from grounding.layers import Encoder
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 
@@ -59,7 +61,7 @@ def run(cases: list[Case], refs: dict[str, Reference], factory: ResolverFactory)
     return [resolvers[c.ref].resolve(c.query) for c in cases]
 
 
-def configs(encode) -> dict[str, ResolverFactory]:
+def configs(encode: Encoder | None) -> dict[str, ResolverFactory]:
     out: dict[str, ResolverFactory] = {
         "alias only": lambda r: Resolver(r, (AliasLayer(r),)),
         "alias + fuzzy, never abstain": lambda r: Resolver(
@@ -133,6 +135,8 @@ def main() -> None:
     parser.add_argument("--no-embeddings", action="store_true")
     parser.add_argument("--errors", action="store_true")
     args = parser.parse_args()
+    # Queries contain non-ASCII text; Windows consoles default to a legacy codepage.
+    sys.stdout.reconfigure(encoding="utf-8")
 
     refs = {name: Reference.from_json(DATA / f"{name}.json") for name in ("ports", "cargoes")}
     cases = load_cases(DATA / "eval_set.jsonl")
