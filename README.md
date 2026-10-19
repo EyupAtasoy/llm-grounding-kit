@@ -95,7 +95,7 @@ between building it and using it.
 ```bash
 python -m venv .venv
 .venv/Scripts/activate            # Windows; use .venv/bin/activate elsewhere
-pip install -e ".[dev]"           # core + pytest
+pip install -e ".[dev]"           # core + pytest, numpy, pydantic
 pip install -e ".[embeddings]"    # optional: numpy + sentence-transformers (pulls in torch)
 
 pytest
@@ -115,6 +115,25 @@ resolver = Resolver.build(ref)                    # alias + fuzzy
 
 m = resolver.resolve("Constantsa")
 m.key, m.canonical, m.method, m.score, m.suggestion
+```
+
+Inside a Pydantic schema (for example the one an LLM fills through structured
+output), keep the raw span and add the grounded key next to it. See
+`examples/pydantic_validator.py`:
+
+```python
+class Shipment(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
+    load_port_raw: str
+    load_port: str | None = None  # None -> send to review with the raw span
+
+    @model_validator(mode="before")
+    @classmethod
+    def ground_load_port(cls, data: Any) -> Any:
+        if isinstance(data, dict) and "load_port_raw" in data:
+            return {**data, "load_port": PORTS.resolve(data["load_port_raw"]).key}
+        return data
 ```
 
 ## Benchmark
@@ -209,7 +228,7 @@ src/grounding/
   resolver.py    Resolver, Match
 data/            synthetic references and eval set
 benchmarks/      run_benchmark.py
-examples/        quickstart.py
+examples/        quickstart.py, pydantic_validator.py
 tests/           pytest suite (no model download needed)
 ```
 
