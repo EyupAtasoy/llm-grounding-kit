@@ -6,6 +6,12 @@ def test_fold_lowercases_and_strips_accents() -> None:
     assert fold("İzmir") == "izmir"
 
 
+def test_fold_handles_letters_without_a_decomposition() -> None:
+    assert fold("Tromsø") == "tromso"
+    assert fold("Straße") == "strasse"
+    assert fold("Gdańsk Łódź") == "gdansk lodz"
+
+
 def test_fold_turns_punctuation_into_single_spaces() -> None:
     assert fold("  Hot-Rolled,  Coils!! ") == "hot rolled coils"
     assert fold("iron_ore") == "iron ore"

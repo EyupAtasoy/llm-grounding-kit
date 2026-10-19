@@ -13,10 +13,19 @@ from dataclasses import dataclass
 
 _NON_WORD = re.compile(r"[^a-z0-9]+")
 
+# Latin letters that NFKD does not split into base letter + accent.
+_NO_DECOMPOSITION = str.maketrans(
+    {"ø": "o", "Ø": "o", "ß": "ss", "æ": "ae", "Æ": "ae", "œ": "oe", "Œ": "oe",
+     "ł": "l", "Ł": "l", "đ": "d", "Đ": "d", "ı": "i"}
+)
+
 
 def fold(text: str) -> str:
-    """Lowercase, strip accents, turn punctuation/underscores into spaces."""
-    decomposed = unicodedata.normalize("NFKD", text)
+    """Lowercase, strip accents, turn punctuation/underscores into spaces.
+
+    Output is ASCII only: non-Latin scripts fold to "" and resolve to Unknown.
+    """
+    decomposed = unicodedata.normalize("NFKD", text.translate(_NO_DECOMPOSITION))
     no_marks = "".join(ch for ch in decomposed if not unicodedata.combining(ch))
     return _NON_WORD.sub(" ", no_marks.lower()).strip()
 
