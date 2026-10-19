@@ -1,0 +1,24 @@
+{
+  "prefixes": ["bulk", "bagged"],
+  "suffixes": ["in bulk", "in bags"],
+  "entries": [
+    {"key": "wheat", "canonical": "Wheat", "aliases": ["milling wheat", "feed wheat"]},
+    {"key": "corn", "canonical": "Corn", "aliases": ["yellow corn"]},
+    {"key": "barley", "canonical": "Barley", "aliases": []},
+    {"key": "soybeans", "canonical": "Soybeans", "aliases": ["soya beans", "soybean"]},
+    {"key": "sunflower_meal", "canonical": "Sunflower Meal", "aliases": ["sunflower seed meal", "sfm"]},
+    {"key": "urea", "canonical": "Urea", "aliases": ["prilled urea", "granular urea"]},
+    {"key": "ammonium_nitrate", "canonical": "Ammonium Nitrate", "aliases": []},
+    {"key": "coal", "canonical": "Coal", "aliases": ["steam coal", "thermal coal"]},
+    {"key": "petcoke", "canonical": "Petroleum Coke", "aliases": ["pet coke"]},
+    {"key": "iron_ore", "canonical": "Iron Ore", "aliases": ["iron ore fines", "iron ore pellets"]},
+    {"key": "scrap", "canonical": "Steel Scrap", "aliases": ["hms", "hms 1/2"]},
+    {"key": "steel_coils", "canonical": "Steel Coils", "aliases": ["hrc", "hot rolled coils", "crc", "cold rolled coils"]},
+    {"key": "cement", "canonical": "Cement", "aliases": ["opc", "portland cement"]},
+    {"key": "clinker", "canonical": "Clinker", "aliases": ["cement clinker"]},
+    {"key": "salt", "canonical": "Salt", "aliases": ["rock salt"]},
+    {"key": "sugar", "canonical": "Sugar", "aliases": ["raw sugar"]},
+    {"key": "kaolin", "canonical": "Kaolin", "aliases": ["china clay"]},
+    {"key": "timber", "canonical": "Timber", "aliases": ["logs", "sawn timber", "lumber"]}
+  ]
+}

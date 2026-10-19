@@ -1,0 +1,28 @@
+{
+  "prefixes": ["port of"],
+  "suffixes": ["port", "anchorage"],
+  "entries": [
+    {"key": "rotterdam", "canonical": "Rotterdam", "aliases": ["rtm", "europoort"]},
+    {"key": "antwerp", "canonical": "Antwerp", "aliases": ["antwerpen", "anvers"]},
+    {"key": "hamburg", "canonical": "Hamburg", "aliases": []},
+    {"key": "istanbul", "canonical": "Istanbul", "aliases": []},
+    {"key": "izmir", "canonical": "Izmir", "aliases": ["smyrna"]},
+    {"key": "iskenderun", "canonical": "Iskenderun", "aliases": ["alexandretta"]},
+    {"key": "constanta", "canonical": "Constanta", "aliases": ["constantza", "konstanza"]},
+    {"key": "novorossiysk", "canonical": "Novorossiysk", "aliases": ["novo"]},
+    {"key": "odesa", "canonical": "Odesa", "aliases": ["odessa"]},
+    {"key": "piraeus", "canonical": "Piraeus", "aliases": ["peiraias"]},
+    {"key": "alexandria", "canonical": "Alexandria", "aliases": ["alex"]},
+    {"key": "casablanca", "canonical": "Casablanca", "aliases": ["casa"]},
+    {"key": "algeciras", "canonical": "Algeciras", "aliases": []},
+    {"key": "valencia", "canonical": "Valencia", "aliases": []},
+    {"key": "genoa", "canonical": "Genoa", "aliases": ["genova"]},
+    {"key": "marseille", "canonical": "Marseille", "aliases": ["marseilles"]},
+    {"key": "singapore", "canonical": "Singapore", "aliases": ["sgsin"]},
+    {"key": "shanghai", "canonical": "Shanghai", "aliases": []},
+    {"key": "houston", "canonical": "Houston", "aliases": []},
+    {"key": "new_orleans", "canonical": "New Orleans", "aliases": ["nola"]},
+    {"key": "port_klang", "canonical": "Port Klang", "aliases": ["klang"]},
+    {"key": "jebel_ali", "canonical": "Jebel Ali", "aliases": []}
+  ]
+}

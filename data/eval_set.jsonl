@@ -1,0 +1,59 @@
+{"ref": "ports", "query": "Rotterdam", "expected": "rotterdam", "tag": "exact"}
+{"ref": "ports", "query": "RTM", "expected": "rotterdam", "tag": "exact"}
+{"ref": "ports", "query": "Antwerpen", "expected": "antwerp", "tag": "exact"}
+{"ref": "ports", "query": "Odessa", "expected": "odesa", "tag": "exact"}
+{"ref": "ports", "query": "NOLA", "expected": "new_orleans", "tag": "exact"}
+{"ref": "ports", "query": "Genova", "expected": "genoa", "tag": "exact"}
+{"ref": "ports", "query": "Port of Hamburg", "expected": "hamburg", "tag": "normalisation"}
+{"ref": "ports", "query": "İzmir", "expected": "izmir", "tag": "normalisation"}
+{"ref": "ports", "query": "Constanța", "expected": "constanta", "tag": "normalisation"}
+{"ref": "ports", "query": "Klang Port", "expected": "port_klang", "tag": "normalisation"}
+{"ref": "ports", "query": "Novorossiysk anchorage", "expected": "novorossiysk", "tag": "normalisation"}
+{"ref": "ports", "query": "ROTTERDAM, NL", "expected": "rotterdam", "tag": "noise"}
+{"ref": "ports", "query": "Alexandria, Egypt", "expected": "alexandria", "tag": "noise"}
+{"ref": "ports", "query": "Houston, TX", "expected": "houston", "tag": "noise"}
+{"ref": "ports", "query": "Antwrep", "expected": "antwerp", "tag": "typo"}
+{"ref": "ports", "query": "Istambul", "expected": "istanbul", "tag": "typo"}
+{"ref": "ports", "query": "Iskendrun", "expected": "iskenderun", "tag": "typo"}
+{"ref": "ports", "query": "Novorossisk", "expected": "novorossiysk", "tag": "typo"}
+{"ref": "ports", "query": "Pireaus", "expected": "piraeus", "tag": "typo"}
+{"ref": "ports", "query": "Singapur", "expected": "singapore", "tag": "typo"}
+{"ref": "ports", "query": "Casablance", "expected": "casablanca", "tag": "typo"}
+{"ref": "ports", "query": "Hamburgo", "expected": "hamburg", "tag": "typo"}
+{"ref": "ports", "query": "Ali Jebel", "expected": "jebel_ali", "tag": "reorder"}
+{"ref": "ports", "query": "Santos", "expected": null, "tag": "out_of_reference"}
+{"ref": "ports", "query": "Vladivostok", "expected": null, "tag": "out_of_reference"}
+{"ref": "ports", "query": "Port Said", "expected": null, "tag": "out_of_reference"}
+{"ref": "ports", "query": "Valletta", "expected": null, "tag": "out_of_reference"}
+{"ref": "ports", "query": "Dubai", "expected": null, "tag": "out_of_reference"}
+{"ref": "ports", "query": "Black Sea", "expected": null, "tag": "out_of_reference"}
+{"ref": "ports", "query": "TBA", "expected": null, "tag": "out_of_reference"}
+{"ref": "cargoes", "query": "Wheat", "expected": "wheat", "tag": "exact"}
+{"ref": "cargoes", "query": "Milling Wheat", "expected": "wheat", "tag": "exact"}
+{"ref": "cargoes", "query": "SFM", "expected": "sunflower_meal", "tag": "exact"}
+{"ref": "cargoes", "query": "HRC", "expected": "steel_coils", "tag": "exact"}
+{"ref": "cargoes", "query": "pet coke", "expected": "petcoke", "tag": "exact"}
+{"ref": "cargoes", "query": "china clay", "expected": "kaolin", "tag": "exact"}
+{"ref": "cargoes", "query": "bulk wheat", "expected": "wheat", "tag": "normalisation"}
+{"ref": "cargoes", "query": "coal in bulk", "expected": "coal", "tag": "normalisation"}
+{"ref": "cargoes", "query": "Hot-Rolled Coils", "expected": "steel_coils", "tag": "normalisation"}
+{"ref": "cargoes", "query": "HMS 1&2", "expected": "scrap", "tag": "normalisation"}
+{"ref": "cargoes", "query": "urea in bags", "expected": "urea", "tag": "normalisation"}
+{"ref": "cargoes", "query": "wheet", "expected": "wheat", "tag": "typo"}
+{"ref": "cargoes", "query": "soyabeans", "expected": "soybeans", "tag": "typo"}
+{"ref": "cargoes", "query": "caolin", "expected": "kaolin", "tag": "typo"}
+{"ref": "cargoes", "query": "iron ore pellet", "expected": "iron_ore", "tag": "typo"}
+{"ref": "cargoes", "query": "clinkers", "expected": "clinker", "tag": "typo"}
+{"ref": "cargoes", "query": "amonium nitrate", "expected": "ammonium_nitrate", "tag": "typo"}
+{"ref": "cargoes", "query": "urea prilled", "expected": "urea", "tag": "reorder"}
+{"ref": "cargoes", "query": "coils of steel", "expected": "steel_coils", "tag": "reorder"}
+{"ref": "cargoes", "query": "meal sunflower", "expected": "sunflower_meal", "tag": "reorder"}
+{"ref": "cargoes", "query": "maize", "expected": "corn", "tag": "synonym"}
+{"ref": "cargoes", "query": "scrap metal", "expected": "scrap", "tag": "synonym"}
+{"ref": "cargoes", "query": "steel billets", "expected": null, "tag": "out_of_reference"}
+{"ref": "cargoes", "query": "wood pellets", "expected": null, "tag": "out_of_reference"}
+{"ref": "cargoes", "query": "fertiliser", "expected": null, "tag": "out_of_reference"}
+{"ref": "cargoes", "query": "grain", "expected": null, "tag": "out_of_reference"}
+{"ref": "cargoes", "query": "general cargo", "expected": null, "tag": "out_of_reference"}
+{"ref": "cargoes", "query": "containers", "expected": null, "tag": "out_of_reference"}
+{"ref": "cargoes", "query": "TBN", "expected": null, "tag": "out_of_reference"}
