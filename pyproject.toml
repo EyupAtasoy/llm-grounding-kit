@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-grounding-kit"
+version = "0.1.0"
+description = "Map free-text entity strings (e.g. from an LLM extractor) onto a canonical reference list, or say Unknown."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Eyup Enes Atasoy" }]
+requires-python = ">=3.10"
+dependencies = ["rapidfuzz>=3.0"]
+
+[project.optional-dependencies]
+embeddings = ["numpy>=1.24", "sentence-transformers>=2.2"]
+dev = ["pytest>=7", "numpy>=1.24"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
